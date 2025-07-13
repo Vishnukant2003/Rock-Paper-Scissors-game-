@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(68, 67, 67);
+    color: white;
+}
+.options{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+button{
+    cursor: pointer;
+    font-size: 200px;
+    background-color: transparent;
+    border: none;
+}
+
+.h1,
+.h2{
+    text-align: center;
+    padding: 10px 0px;
+    
+}
