@@ -1,50 +1,54 @@
-   let winCount = 0;
-    let loseCount= 0;
-    let drawCount= 0;
+let rounds = 0;
+let userWinCount = 0;
+let userLostCount = 0;
+let drawCount = 0;
 
-function playGame(userChoice){
+function playGame(userChoice) {
+
     let computerChoice = getComputerChoice();
-  
-    console.log(userChoice,computerChoice);
 
-    let result = '';
+    const result= document.getElementById("result");
+    const total= document.getElementById("total");
+    const won= document.getElementById("won");
+    const lost= document.getElementById("lost");
+    const draw= document.getElementById("draw");
+    
 
-    document.getElementById("result")
+    if (userChoice === computerChoice) {
+        result.style.visibility= "visible";
+        result.innerText= "Result : Draw.";
 
-    if(userChoice === computerChoice ){
+        rounds++;
         drawCount++;
-        result.innerHTML = "It's Draw🐉... "
+        total.innerText= "Total Rounds : " + rounds;
+        draw.innerText= "Draw : " + drawCount;
+    } else if (userChoice === "rock" && computerChoice === "scissors"
+        || userChoice === "paper" && computerChoice === "rock"
+        || userChoice === "scissors" && computerChoice === "paper"
+    ) {
+        result.style.visibility= "visible";
+        result.innerText= "Result : You won.";
 
-    }else if(userChoice==="rock" && computerChoice==="scissor" 
-        ||   userChoice==="paper" && computerChoice==="rock"
-        ||   userChoice==="scissor" && computerChoice==="paper"
-    )
-    {
-        winCount++;
-        result.innerHTML = "You Win🏆 ..."
-        
-    }else{
-           loseCount++;
-        result.innerHTML = "You lose😭"
-     
+        rounds++;
+        userWinCount++;
+        total.innerText= "Total Rounds : " + rounds;
+        won.innerText= "You Won : " + userWinCount;
+    } else {
+        result.style.visibility= "visible";
+        result.innerText= "Result : You lost.";
+
+        rounds++;
+        userLostCount++;
+        total.innerText= "Total Rounds : " + rounds;
+        lost.innerText= "You Lost : " + userLostCount;
     }
-       // Update result text
-   
 
-    document.getElementById("score").innerHTML = `
-        Wins: ${winCount} | Losses: ${loseCount} | Draws: ${drawCount}
-    `;
 }
 
 
-function getComputerChoice(){
-
-    let arr = ["rock","paper","scissor"];
-
-    let x = Math.random() * 3;
-
+function getComputerChoice() {
+    let arr=["rock", "paper", "scissors"];
+    let x = (Math.random()*3);
     let random = parseInt(x);
-
     return arr[random];
-
 }

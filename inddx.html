@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors</title>
 </head>
-<body>
-    <div>
-    <h1 class="h1">Rock Paper Scissor..</h1>
-    <h2 id="result" class="h2" >Result: Start Game.. </h2>
-<div class="options">
-    <button onclick="playGame('rock')">🪨</button>
-    <button onclick="playGame('paper')">📃</button>
-    <button onclick="playGame('scissor')">✂️</button>
-</div>
 
-    <p id="result"></p>
-    <p id="score">
-    Wins: 0 | Losses: 0 | Draws: 0
-    </p>
-  
+  <body>
+    <h1 class="heading">Rock Paper Scissors</h1>
+    <h2 class="result" id="result">Result : You won.</h2>
 
-</div> 
+    <div class="options">
+      <button onclick="playGame('rock')">🪨</button> 
+      <button onclick="playGame('paper')">📄</button>
+      <button onclick="playGame('scissors')">✂️</button>
+    </div>
+    <h2 class="total" id="total">Total Rounds : 0</h2>
+    <div class="score">
+      <h2 id="won">You won : 0</h2>
+      <h2 id="lost">You Lost : 0</h2>
+      <h2 id="draw">Draw : 0</h2>
+    </div>
+    <a href="inddx.html">
+      <button class="restart">Restart</button>
+    </a>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
